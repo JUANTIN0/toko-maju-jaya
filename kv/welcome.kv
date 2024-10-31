@@ -1,0 +1,35 @@
+#:kivy 2.3.0
+
+<WelcomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [50, 100, 50, 100]
+        Label:
+            text: "Toko Maju Jaya"
+            font_size: 30
+            size_hint: (1, 0)
+            color: 0, 0, 0, 1
+            padding: [50, 100, 50, 100]
+        Button:
+            text: "Login"
+            size_hint: (1, None)
+            height: 50
+            background_color: 0, 0, 0, 1
+            color: 1, 1, 1, 1
+            on_press:
+                app.root.current = 'login'  # Berpindah ke screen 'login'
+        Button:
+            text: "Register"
+            size_hint: (1, None)
+            height: 50
+            background_color: 1, 1, 1, 1
+            color: 0, 0, 0, 1
+            on_press:
+                app.root.current = 'register'  # Berpindah ke screen 'register'
+<RegisterScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [50, 100, 50, 100]
+        
+
+

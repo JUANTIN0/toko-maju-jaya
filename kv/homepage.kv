@@ -1,0 +1,240 @@
+<HomePageScreen>:
+    orientation: 'vertical'
+
+    # Background canvas for the entire screen
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1  # Green background for header area
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        # Header
+        BoxLayout:
+            size_hint_y: None
+            height: 100
+            canvas.before:
+                Color:
+                    rgba: 0, 166/255, 81/255, 1  # Green background
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: "Welcome Pengguna"
+                color: 1, 1, 1, 1  # White text
+                font_size: 15
+
+        # Search Bar
+        BoxLayout:
+            size_hint_y: None
+            height: 60
+            padding: 10
+            spacing: 10
+            TextInput:
+                hint_text: "Search categories..."
+                size_hint_x: 0.8
+            Button:
+                text: "Search"
+                size_hint_x: 0.2
+
+        # Category Tabs (Vegetables, Fruits, Spices, etc.)
+        ScrollView:
+            size_hint_y: None
+            height: 20
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_x: None
+                width: self.minimum_width
+                Button:
+                    text: "All"
+                    size_hint_x: None
+                    width: 90
+                Button:
+                    text: "Vegetables"
+                    size_hint_x: None
+                    width: 90
+                Button:
+                    text: "Fruits"
+                    size_hint_x: None
+                    width: 90
+                Button:
+                    text: "Spices"
+                    size_hint_x: None
+                    width: 90
+                Button:
+                    text: "Holiday Deals"
+                    size_hint_x: None
+                    width: 90
+
+        # Product Listing
+        Label:
+            text: "Terlaris hari ini"
+            size_hint_y: None
+            height: 40
+            color: 0, 0, 0, 1
+            halign: "left"  # Align text to the left
+            valign: "middle"  # Vertical alignment
+            text_size: self.width, None  # Make text fit the width of the label
+            padding_x: 10  # Optional padding to create space from the left edge
+
+        ScrollView:
+            GridLayout:
+                cols: 2
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 150
+                row_force_default: True
+
+                # Sample Product 1
+                BoxLayout:
+                    orientation: 'vertical'
+                    padding: 10
+                    spacing: 5
+                    canvas.before:
+                        Color:
+                            rgba: 1, 1, 1, 1  # White background
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    # Image of the product
+                    Image:
+                        source: 'brocolli.png'  # Replace with actual image
+                        size_hint_y: None
+                        height: 20
+                        allow_stretch: True
+                        keep_ratio: True
+
+                    # Product Name
+                    Label:
+                        text: "Broccoli"
+                        color: (0, 0, 0, 1)
+                        font_size: 12
+                        halign: "left"  # Align text to the left
+                        valign: "middle"  # Vertical alignment
+                        text_size: self.width, None  # Make text fit the width of the label
+                        padding_x: 10  # Optional padding to create space from the left edge
+                        size_hint_y: None
+                        height: 1
+
+                    # Horizontal Layout for Price and Button
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        size_hint_y: None
+                        height: 30
+                        spacing: 5
+
+                        # Price Label
+                        Label:
+                            text: "Rp 15.000/kg"
+                            color: (0, 166/255, 81/255, 1)
+                            font_size: 12
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.width, None
+                            padding_x: 10
+                            size_hint_x: 0.8  # Occupy 80% of the horizontal space
+
+                        # "+" Button
+                        Button:
+                            text: '+'
+                            size_hint_x: 0.2  # Occupy 20% of the horizontal space
+                            background_color: (0, 200/255, 83/255, 1)  # Green background
+                            color: (1, 1, 1, 1)  # White text
+                            font_size: 16
+                            on_press: app.add_to_cart('Broccoli')
+
+                # Sample Product 2
+                BoxLayout:
+                    orientation: 'vertical'
+                    padding: 10
+                    spacing: 5
+                    canvas.before:
+                        Color:
+                            rgba: 1, 1, 1, 1  # White background
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    # Image of the product
+                    Image:
+                        source: 'tomato.png'  # Replace with actual image
+                        size_hint_y: None
+                        height: 100
+                        allow_stretch: True
+                        keep_ratio: True
+
+                    # Product Name and Price
+                    Label:
+                        text: "Tomato"
+                        color: (0, 0, 0, 1)
+                        font_size: 12
+                        halign: "left"  # Align text to the left
+                        valign: "middle"  # Vertical alignment
+                        text_size: self.width, None  # Make text fit the width of the label
+                        padding_x: 10  # Optional padding to create space from the left edge
+                        size_hint_y: None
+                        height: 1
+
+                    # Horizontal Layout for Price and Button
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        size_hint_y: None
+                        height: 30
+                        spacing: 5
+
+                        # Price Label
+                        Label:
+                            text: "Rp 12.000/kg"
+                            color: (0, 166/255, 81/255, 1)
+                            font_size: 12
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.width, None
+                            padding_x: 10
+                            size_hint_x: 0.8  # Occupy 80% of the horizontal space
+
+                        # "+" Button
+                        Button:
+                            text: '+'
+                            size_hint_x: 0.2  # Occupy 20% of the horizontal space
+                            background_color: (0, 200/255, 83/255, 1)  # Green background
+                            color: (1, 1, 1, 1)  # White text
+                            font_size: 16
+                            on_press: app.add_to_cart('Tomato')
+                        # Floating Action Button (FAB)
+        FloatLayout:
+            Button:
+                text: '+'
+                size_hint: None, None
+                size: '20dp', '20dp'
+                pos_hint: {'center_x': 0.8, 'center_y': 0.1}
+                background_normal: ''
+                background_color: 1, 0.3, 0.3, 1
+                font_size: '24sp'
+                color: 1, 1, 1, 1
+                border: [20, 20, 20, 20]
+                canvas.before:
+                    Color:
+                        rgba: 1, 0.3, 0.3, 1
+                    Ellipse:
+                        size: self.size
+                        pos: self.pos
+
+        # Bottom Navigation Bar
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            spacing: 1
+            Button:
+                text: "Home"
+            Button:
+                text: "Cart"
+            Button:
+                text: "Profile"
+

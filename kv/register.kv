@@ -1,0 +1,81 @@
+#:kivy 2.3.0
+<RegisterScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [50, 50, 50, 50]
+        spacing: 10
+        Label:
+            text: "Hello!Register to get started"
+            font_size: 24
+            size_hint: (1, 0.2)
+            color: (0, 0, 0, 1)
+            halign: "center"
+            text_size: self.size  # Mengaktifkan halign
+            valign: "middle"
+        TextInput:
+            hint_text: "Username"
+            size_hint: (1, 0.1)
+            multiline: False
+            padding: [10, 10]  # Pastikan padding menggunakan 2 elemen (horizontal, vertical)
+        TextInput:
+            hint_text: "Email"
+            size_hint: (1, 0.1)
+            multiline: False
+            password: True
+            padding: [10, 10, 0, 0]  # Format padding sesuai aturan
+        TextInput:
+            hint_text: "Password"
+            size_hint: (1, 0.1)
+            multiline: False
+            password: True
+            padding: [10, 10, 0, 0]  # Format padding sesuai aturan
+        TextInput:
+            hint_text: "Confirm password"
+            size_hint: (1, 0.1)
+            multiline: False
+            password: True
+            padding: [10, 10, 0, 0]  # Format padding sesuai aturan
+        Button:
+            text: "Register"
+            size_hint: (1, 0.1)
+            background_color: (0, 0, 0, 1)
+            color: (1, 1, 1, 1)
+            on_press: app.root.current = 'home'  # Pindah ke halaman home
+        Label:
+            text: "Or Login with"
+            font_size: 12
+            size_hint: (1, 0.05)
+            halign: "center"
+            text_size: self.size  # Mengaktifkan halign
+        GridLayout:
+            cols: 3
+            size_hint: (1, 0.1)
+            spacing: 10
+            Button:
+                text: "f"
+                background_color: (0.23, 0.35, 0.6, 1)
+                color: (1, 1, 1, 1)
+            Button:
+                text: "G"
+                background_color: (0.9, 0.9, 0.9, 1)
+                color: (0, 0, 0, 1)
+            Button:
+                text: "A"
+                background_color: (0, 0, 0, 1)
+                color: (1, 1, 1, 1)
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: (1, 0.1)
+            Label:
+                text: "Already have an account?"
+                font_size: 12
+                color: (0, 0, 0, 1)
+                halign: "center"
+                text_size: self.size  # Mengaktifkan halign
+            Button:
+                text: "Login Now"
+                font_size: 12
+                size_hint: (0, 0.08)
+                color: (0, 0, 1, 1)
+                background_color:(1, 1, 1, 0)
+

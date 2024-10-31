@@ -1,0 +1,75 @@
+#:kivy 2.3.0
+
+<ManagerScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        # Header with Tabs
+        BoxLayout:
+            size_hint_y: 0.10
+            padding: [20, 40, 20, 0]
+            spacing: 20
+            Label:
+                text: 'My task'
+                font_size: '24sp'
+                bold: True
+                color: 0, 0, 0, 1
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+        
+        BoxLayout:
+            size_hint_y: 0.20
+            padding: [20, 40, 20, 0]
+            spacing: 20
+            Label:
+                text: 'Recent'
+                font_size: '16sp'
+                color: 0.7, 0.7, 0.7, 1
+            Label:
+                text: 'In progress'
+                font_size: '16sp'
+                color: 0, 0, 0, 1
+                size_hint_y: None
+                height: '40dp'
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+            Label:
+                text: 'Review'
+                font_size: '16sp'
+                color: 0.7, 0.7, 0.7, 1
+
+        # No Task Yet Message
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            padding: [10, 20, 10, 50] 
+            Label:
+                text: 'No Task Yet'
+                font_size: '20sp'
+                color: 0.3, 0.3, 0.3, 1
+            Label:
+                text: 'Lorem gfdsfisga shg'
+                font_size: '14sp'
+                color: 0.3, 0.3, 0.3, 1
+
+        # Floating Action Button (FAB)
+        FloatLayout:
+            Button:
+                text: '+'
+                size_hint: None, None
+                size: '40dp', '40dp'
+                pos_hint: {'center_x': 0.9, 'center_y': 0.1}
+                background_normal: ''
+                background_color: 1, 0.3, 0.3, 1
+                font_size: '24sp'
+                color: 1, 1, 1, 1
+                border: [20, 20, 20, 20]
+                canvas.before:
+                    Color:
+                        rgba: 1, 0.3, 0.3, 1
+                    Ellipse:
+                        size: self.size
+                        pos: self.pos
