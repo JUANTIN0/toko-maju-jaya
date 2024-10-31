@@ -40,7 +40,7 @@ class MyApp(App):
         sm.add_widget(PasswordchangeScreen(name='passwordchange'))
         sm.add_widget(HomepageScreen(name='homepage'))
         sm.add_widget(ManagerScreen(name='manager'))
-        sm.current = 'manager'
+        sm.current = 'homepage'
         return sm
 
 if __name__ == '__main__':

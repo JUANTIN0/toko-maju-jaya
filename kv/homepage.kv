@@ -12,8 +12,9 @@
     BoxLayout:
         orientation: 'vertical'
 
-        # Header
+        # Header box ijo
         BoxLayout:
+            orientation: 'vertical'
             size_hint_y: None
             height: 100
             canvas.before:
@@ -23,24 +24,29 @@
                     pos: self.pos
                     size: self.size
             Label:
-                text: "Welcome Pengguna"
+                text: "Welcome "
+                color: 1, 1, 1, 1  # White text
+                font_size: 15
+            Label:
+                text: " Pengguna"
                 color: 1, 1, 1, 1  # White text
                 font_size: 15
 
         # Search Bar
-        BoxLayout:
-            size_hint_y: None
-            height: 60
-            padding: 10
-            spacing: 10
-            TextInput:
-                hint_text: "Search categories..."
-                size_hint_x: 0.8
-            Button:
-                text: "Search"
-                size_hint_x: 0.2
+            BoxLayout:
+                size_hint_y: None
+                height: 60
+                padding: 10
+                spacing: 10
+                TextInput:
+                    hint_text: "Search categories..."
+                    size_hint_x: 0.8
+                Button:
+                    text: "Search"
+                    size_hint_x: 0.2
 
-        # Category Tabs (Vegetables, Fruits, Spices, etc.)
+            
+            # Category Tabs (Vegetables, Fruits, Spices, etc.)
         ScrollView:
             size_hint_y: None
             height: 20
@@ -103,9 +109,9 @@
 
                     # Image of the product
                     Image:
-                        source: 'brocolli.png'  # Replace with actual image
+                        source: 'image/brocolli.png'  # Replace with actual image
                         size_hint_y: None
-                        height: 20
+                        height: 100
                         allow_stretch: True
                         keep_ratio: True
 
