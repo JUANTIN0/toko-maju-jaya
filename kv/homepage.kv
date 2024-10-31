@@ -24,18 +24,24 @@
                     pos: self.pos
                     size: self.size
             Label:
-                text: "Welcome "
+                text: "Welcome"
                 color: 1, 1, 1, 1  # White text
-                font_size: 15
+                font_size: 10
+                halign: 'left'
+                valign: 'middle'
+                text_size: self.size
             Label:
-                text: " Pengguna"
+                text: "Pengguna"
                 color: 1, 1, 1, 1  # White text
-                font_size: 15
+                font_size: 20
+                halign: 'left'
+                valign: 'middle'
+                text_size: self.size
 
         # Search Bar
             BoxLayout:
                 size_hint_y: None
-                height: 60
+                height: 50
                 padding: 10
                 spacing: 10
                 TextInput:
@@ -169,7 +175,7 @@
 
                     # Image of the product
                     Image:
-                        source: 'tomato.png'  # Replace with actual image
+                        source: 'image/tomat.png'  # Replace with actual image
                         size_hint_y: None
                         height: 100
                         allow_stretch: True
