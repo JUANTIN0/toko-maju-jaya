@@ -12,10 +12,10 @@ from halaman.manager import ManagerScreen
 from kivy.lang import Builder
 from kivy.core.window import Window
 
-class MyScreenManager(ScreenManager):
+class TokoMajuJayaScreenManager(ScreenManager):
     pass
 
-class MyApp(App):
+class TokoMajuJayaApp(App):
     def build(self):
         Window.size = (300,610)
         Window.clearcolor = (1, 1, 1, 1)
@@ -31,7 +31,7 @@ class MyApp(App):
 
 
 
-        sm = MyScreenManager()
+        sm = TokoMajuJayaScreenManager()
         sm.add_widget(WelcomeScreen(name='welcome'))
         sm.add_widget(LoginScreen(name='login'))
         sm.add_widget(RegisterScreen(name='register'))
@@ -40,8 +40,8 @@ class MyApp(App):
         sm.add_widget(PasswordchangeScreen(name='passwordchange'))
         sm.add_widget(HomepageScreen(name='homepage'))
         sm.add_widget(ManagerScreen(name='manager'))
-        sm.current = 'homepage'
+        sm.current = 'manager'
         return sm
 
 if __name__ == '__main__':
-    MyApp().run()
+    TokoMajuJayaApp().run()
