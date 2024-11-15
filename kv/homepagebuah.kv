@@ -1,4 +1,4 @@
-<HomePageScreen>:
+<HomePageBuahScreen>:
     orientation: 'vertical'
 
     # Background canvas for the entire screen
@@ -81,10 +81,10 @@
                     width: 90
                     on_press:app.root.current = 'homepagerempah'
                 Button:
-                    text: "Heavy Food"
+                    text: "Holiday Deals"
                     size_hint_x: None
                     width: 90
-                    on_press:app.root.current = 'homepagemakanan'
+                    on_press:app.root.current = 'homepagemakan'
 
         # Product Listing
         Label:
@@ -120,7 +120,7 @@
 
                     # Image of the product
                     Image:
-                        source: 'image/brocolli.png'  # Replace with actual image
+                        source: 'image/pisang.png'  # Replace with actual image
                         size_hint_y: None
                         height: 100
                         allow_stretch: True
@@ -128,7 +128,7 @@
 
                     # Product Name
                     Label:
-                        text: "Broccoli"
+                        text: "Banana"
                         color: (0, 0, 0, 1)
                         font_size: 12
                         halign: "left"  # Align text to the left
@@ -180,7 +180,7 @@
 
                     # Image of the product
                     Image:
-                        source: 'image/tomat.png'  # Replace with actual image
+                        source: 'image/stoberi.png'  # Replace with actual image
                         size_hint_y: None
                         height: 100
                         allow_stretch: True
@@ -188,7 +188,7 @@
 
                     # Product Name and Price
                     Label:
-                        text: "Tomato"
+                        text: "Stoberi"
                         color: (0, 0, 0, 1)
                         font_size: 12
                         halign: "left"  # Align text to the left
@@ -224,72 +224,13 @@
                             color: (1, 1, 1, 1)  # White text
                             font_size: 16
                             on_press: app.add_to_cart('Tomato')
-                # Sample Product 1
-                BoxLayout:
-                    orientation: 'vertical'
-                    padding: 10
-                    spacing: 5
-                    canvas.before:
-                        Color:
-                            rgba: 1, 1, 1, 1  # White background
-                        RoundedRectangle:
-                            pos: self.pos
-                            size: self.size
-                            radius: [10]
-
-                    # Image of the product
-                    Image:
-                        source: 'image/kacang panjang.png'  # Replace with actual image
-                        size_hint_y: None
-                        height: 100
-                        allow_stretch: True
-                        keep_ratio: True
-
-                    # Product Name
-                    Label:
-                        text: "Kacang Panjang"
-                        color: (0, 0, 0, 1)
-                        font_size: 12
-                        halign: "left"  # Align text to the left
-                        valign: "middle"  # Vertical alignment
-                        text_size: self.width, None  # Make text fit the width of the label
-                        padding_x: 10  # Optional padding to create space from the left edge
-                        size_hint_y: None
-                        height: 1
-
-                    # Horizontal Layout for Price and Button
-                    BoxLayout:
-                        orientation: 'horizontal'
-                        size_hint_y: None
-                        height: 30
-                        spacing: 5
-
-                        # Price Label
-                        Label:
-                            text: "Rp 15.000/kg"
-                            color: (0, 166/255, 81/255, 1)
-                            font_size: 12
-                            halign: "left"
-                            valign: "middle"
-                            text_size: self.width, None
-                            padding_x: 10
-                            size_hint_x: 0.8  # Occupy 80% of the horizontal space
-
-                        # "+" Button
-                        Button:
-                            text: '+'
-                            size_hint_x: 0.2  # Occupy 20% of the horizontal space
-                            background_color: (0, 200/255, 83/255, 1)  # Green background
-                            color: (1, 1, 1, 1)  # White text
-                            font_size: 16
-                            on_press: app.add_to_cart('Kacang Panjang')
-        # Floating Action Button (FAB)
+                        # Floating Action Button (FAB)
         FloatLayout:
             Button:
                 text: '+'
                 size_hint: None, None
                 size: '20dp', '20dp'
-                pos_hint: {'center_x': 0.9, 'center_y': 0.1}
+                pos_hint: {'center_x': 0.8, 'center_y': 0.1}
                 background_normal: ''
                 background_color: 1, 0.3, 0.3, 1
                 font_size: '24sp'

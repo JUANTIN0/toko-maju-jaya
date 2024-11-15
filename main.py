@@ -9,6 +9,10 @@ from halaman.creatanewpassword import CreatanewpasswordScreen
 from halaman.passwordchange import PasswordchangeScreen
 from halaman.homepage import HomepageScreen
 from halaman.manager import ManagerScreen
+from halaman.homepagebuah import HomepageBuahScreen
+from halaman.homepagemakan import HomepageMakanScreen
+from halaman.homepagerempah import HomepageRempahScreen
+from halaman.homepagesayur import HomepageSayurScreen
 from kivy.lang import Builder
 from kivy.core.window import Window
 
@@ -27,6 +31,10 @@ class TokoMajuJayaApp(App):
         Builder.load_file(os.path.join(kv_path, 'creatanewpassword.kv'))
         Builder.load_file(os.path.join(kv_path, 'passwordchange.kv'))
         Builder.load_file(os.path.join(kv_path, 'homepage.kv'))
+        Builder.load_file(os.path.join(kv_path, 'homepagebuah.kv'))
+        Builder.load_file(os.path.join(kv_path, 'homepagemakan.kv'))
+        Builder.load_file(os.path.join(kv_path, 'homepagerempah.kv'))
+        Builder.load_file(os.path.join(kv_path, 'homepagesayur.kv'))
         Builder.load_file(os.path.join(kv_path, 'manager.kv'))
 
 
@@ -40,7 +48,11 @@ class TokoMajuJayaApp(App):
         sm.add_widget(PasswordchangeScreen(name='passwordchange'))
         sm.add_widget(HomepageScreen(name='homepage'))
         sm.add_widget(ManagerScreen(name='manager'))
-        sm.current = 'manager'
+        sm.add_widget(HomepageBuahScreen(name='homepagebuah'))
+        sm.add_widget(HomepageSayurScreen(name='homepagesayur'))
+        sm.add_widget(HomepageRempahScreen(name='homepagerempah'))
+        sm.add_widget(HomepageMakanScreen(name='homepagemakan'))
+        sm.current = 'homepage'
         return sm
 
 if __name__ == '__main__':
