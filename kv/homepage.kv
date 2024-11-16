@@ -295,13 +295,15 @@
                 font_size: '24sp'
                 color: 1, 1, 1, 1
                 border: [20, 20, 20, 20]
+                on_press:app.root.current = 'listbarang'
                 canvas.before:
                     Color:
                         rgba: 1, 0.3, 0.3, 1
                     Ellipse:
                         size: self.size
                         pos: self.pos
-
+                        
+                        
         # Bottom Navigation Bar
         BoxLayout:
             size_hint_y: None

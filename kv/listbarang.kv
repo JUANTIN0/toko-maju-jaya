@@ -1,0 +1,29 @@
+<ListBarangScreen>:
+    name: "list_barang"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        # Header
+        BoxLayout:
+            size_hint_y: None
+            height: 60
+            padding: 10
+            canvas.before:
+                Color:
+                    rgba: 0, 166/255, 81/255, 1  # Hijau header
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: "Daftar Barang"
+                color: 1, 1, 1, 1  # Warna putih untuk teks
+                font_size: 20
+
+        # List Barang (ScrollView dengan GridLayout)
+        ScrollView:
+            GridLayout:
+                id: list_barang_grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height

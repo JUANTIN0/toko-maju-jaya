@@ -13,6 +13,7 @@ from halaman.homepagebuah import HomepageBuahScreen
 from halaman.homepagemakan import HomepageMakanScreen
 from halaman.homepagerempah import HomepageRempahScreen
 from halaman.homepagesayur import HomepageSayurScreen
+from halaman.listbarang import ListBarangScreen
 from kivy.lang import Builder
 from kivy.core.window import Window
 
@@ -36,6 +37,8 @@ class TokoMajuJayaApp(App):
         Builder.load_file(os.path.join(kv_path, 'homepagerempah.kv'))
         Builder.load_file(os.path.join(kv_path, 'homepagesayur.kv'))
         Builder.load_file(os.path.join(kv_path, 'manager.kv'))
+        Builder.load_file(os.path.join(kv_path, 'listbarang.kv'))
+
 
 
 
@@ -52,7 +55,8 @@ class TokoMajuJayaApp(App):
         sm.add_widget(HomepageSayurScreen(name='homepagesayur'))
         sm.add_widget(HomepageRempahScreen(name='homepagerempah'))
         sm.add_widget(HomepageMakanScreen(name='homepagemakan'))
-        sm.current = 'homepage'
+        sm.add_widget(ListBarangScreen(name='listbarang'))
+        sm.current = 'listbarang'
         return sm
 
 if __name__ == '__main__':
