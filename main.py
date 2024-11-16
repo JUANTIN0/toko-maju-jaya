@@ -56,7 +56,7 @@ class TokoMajuJayaApp(App):
         sm.add_widget(HomepageRempahScreen(name='homepagerempah'))
         sm.add_widget(HomepageMakanScreen(name='homepagemakan'))
         sm.add_widget(ListBarangScreen(name='listbarang'))
-        sm.current = 'listbarang'
+        sm.current = 'homepage'
         return sm
 
 if __name__ == '__main__':
